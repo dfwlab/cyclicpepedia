@@ -3,7 +3,7 @@
 Lei Liu<sup>1, #</sup>, Liu Yang<sup>2, #</sup>, Suqi Cao<sup>2</sup>, Zhigang Gao<sup>3</sup>, Bin Yang<sup>4</sup>, Guoqing Zhang<sup>5, *</sup>, Ruixin Zhu<sup>1, *</sup>, Dingfeng Wu<sup>2, *</sup>
 
 ### Web crawling
-The <code>/Web crawling</code> directory stores the crawler codes of different source. 
+The <code>/Web crawling</code> directory stores the crawler codes of different data source. 
 
 ### Environment
 Build a Docker image through <code>dockerfile</code> or pull docker image through this link:<code>docker pull registry.cn-hangzhou.aliyuncs.com/dfwlab/cyclicpepedia:20240106</code>.
