@@ -1,0 +1,962 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="description" content="CyBase is a database of proteins with a head-to-tail cyclised backbone. The database provide annotated information on nucleic acid sequences, protein sequences and 3D structures. Several tools are available to search the database (Fingerprint search, loop search), compare sequences (Sequence diversity wheel, Synthetic analogues),represent cyclic domains (Cyclotide Collier de Perles), and predict the optima size of a linker to cyclise a protein (Predict Linker, Cyclisation Energy). "/>
+	<meta http-equiv="keywords" content="CyBase, cybase, cyclic protein, cyclic peptide, cyclotide, circular protein, David Craik, Conan Wang, Jason Mulvenna, Quentin Kaas, circularin, subtilosin, gassericin, uberolysin, reutericin, SFTI, RTD"/>
+	<title>Cybase</title>
+	<link rel="StyleSheet" href="index.css?d" type="text/css">
+</head>
+
+<body>
+
+
+<div id='globalcontainer'>
+
+<div id='pagehead'>
+	<a href="index.php">
+		<img src="images/logo.gif"   alt="Welcome to Cybase"/>
+		<img src="images/banner.png" alt="The Database of Cyclic Proteins" class='expl'/>
+	</a>
+</div>
+
+<div id='menu'>
+	<div class='submenu'>
+		<img src='images/menu_top.png'/>
+		<h1><a href='?page=welcome'>Welcome</a></h1>
+		<div class='element'><a href='?page=bibliography'>Bibliography</a></div>
+		<div class='element'><a href='?page=links'>Links</a></div>
+		<div class='element'><a href='?page=about_us'>About us</a></div>
+		<div class='element'><a href='?page=list&table=reference&listonly=1'>References</a></div>
+		<img src='images/menu_bottom.png'/>
+	</div>
+	<div class='submenu'>
+		<img src='images/menu_top.png'/>
+		<h1><a href='?page=list&table=nucleicacid&sort_by=ID'>Nucleic acids</a></h1>
+		<div class='element'><a href='?page=search&table=nucleicacid'>Search</a></div>
+		<div class='element'><a href='?page=primermatch'>Primer Match</a></div>
+		<img src='images/menu_bottom.png'/>
+	</div>
+	<div class='submenu'>
+		<img src='images/menu_top.png'/>
+		<h1><a href='?page=list&table=protein&sort_by=ID'>Proteins</a></h1>
+		<div class='has-sub'>Classes
+		<div class='is-sub'>
+			<div>
+				<a href='?page=list&table=protein&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Sequence&Class%5B%5D=Cyclotide&ProteinType%5B%5D=Wild+type&sort_by=ID'>Cyclotides</a>
+			</div>
+			<div>
+				<a href='?page=list&table=protein&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Sequence&Class%5B%5D=BBI-like+trypsin+inhibitor&ProteinType%5B%5D=Wild+type&sort_by=ID'>BBI-like TI</a>
+			</div>
+			<div>
+				<a href='?page=list&table=protein&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Sequence&Class%5B%5D=Bacterial&ProteinType%5B%5D=Wild+type&sort_by=ID'>Bacterial</a>
+			</div>
+			<div>
+				<a href='?page=list&table=protein&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Sequence&Class%5B%5D=Orbitide&ProteinType%5B%5D=Wild+type&sort_by=ID'>Orbitides</a>
+			</div>
+			<div>
+				<a href='?page=list&table=protein&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Sequence&Class%5B%5D=Cyclised+linear+proteins&ProteinType%5B%5D=ALL&sort_by=ID'>Cyclised linear</a>
+			</div>
+			<div>
+				<a href='?page=list&table=protein&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Sequence&Class%5B%5D=Mushroom&ProteinType%5B%5D=Wild+type&sort_by=ID'>Mushroom</a>
+			</div>
+			<div>
+				<a href='?page=list&table=protein&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Sequence&Class%5B%5D=Primate&ProteinType%5B%5D=Wild+type&sort_by=ID'>Primate</a>
+			</div>
+			<div>
+				<a href='?page=list&table=protein&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Sequence&Class%5B%5D=Sunflower+cyclic+peptides&ProteinType%5B%5D=Wild+type&sort_by=ID'>Sunflower cyclic</a>
+			</div>
+			<div>
+				<a href='?page=list&table=protein&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Sequence&Class%5B%5D=Squash+trypsin+inhibitor&ProteinType%5B%5D=Wild+type&sort_by=ID'>Squash TI</a>
+			</div>
+		</div>
+		</div>
+
+		<div class='element'><a href='?page=search&table=protein'>Search</a></div>
+		<div class='subsubmenu'>
+			<a href='?page=fingerprint'>Fingerprint Search</a>
+		</div>
+		<div class='subsubmenu'>
+			<a href='?page=loopsearch'>Loop Search</a>
+		</div>
+
+		<div class='has-sub'>Tools
+		<div class='is-sub'>
+			<div><a href='?page=collierdeperles'>Cyclotide Collier de Perles</a></div>
+			<div><a href='?page=circles'>Sequence Diversity Wheel</a></div>
+			<!-- <div><a href='?page=clustal'>Clustal Alignment</a></div> -->
+			<div><a href='?page=digest'>Digest Peptide</a></div>
+			<div><a href='?page=parent'>Synthetic analogues</a></div>
+			<div><a href='?page=loop_count'>Cyclotide loop view</a></div>
+			<div><a href='http://biomine-ws.ece.ualberta.ca/CyPred/index.php'>CyPred: sequence-based prediction of cyclic proteins</a></div>
+		</div>
+		</div>
+
+		<div class='element'><a href='?page=no_cyclotide_plants'>Plant Species devoid of Cyclotides</a></div>
+		<img src='images/menu_bottom.png'/>
+	</div>
+	<div class='submenu'>
+		<img src='images/menu_top.png'/>
+		<h1><a href='?page=list&table=structure&sort_by=ID'>Structures</a></h1>
+		<div class='element'><a href='?page=search&table=structure'>Search</a></div>
+
+		<div class='has-sub'>Tools
+		<div class='is-sub'>
+			<div><a href='?page=terminiplot'>Termini Distance Distributions</a></div>
+			<div><a href='?page=termini'>Termini proximity</a></div>
+		</div>
+		</div>
+
+		<img src='images/menu_bottom.png'/>
+	</div>
+	<div class='submenu'>
+		<img src='images/menu_top.png'/>
+		<h1><a href='?page=assays'>Assays</a></h1>
+		<div class='element'><a href='?page=assays'>Assays</a></div>
+		<!--<div class='element'><a href='?page=alphaplot'>Alpha Plot</a></div>
+		<div class='element'><a href='?page=cyresview'>Cyclic Seqplot</a></div>-->
+		<img src='images/menu_bottom.png'/>
+	</div>
+</div>
+
+<div id='main'>
+
+
+<SCRIPT type="text/javascript">
+function checkUncheckAll(theElement) {   
+	var theForm = theElement.form, z = 0, checked, checked_set = 0;   
+	while (z < theForm.length)
+	{
+		if (theForm[z].type == 'checkbox')
+		{
+			if (checked_set == 0)
+			{
+				checked = theForm[z].checked;
+				checked_set = 1;
+			}
+			theForm[z].checked = !checked;
+		}
+		z++;
+	}
+}
+</SCRIPT>
+
+<h1>Structure List</h1>
+
+<form action='index.php?page=format&table=structure' method='POST'>
+<div><b>Your search:</b> List all entries</div>
+<table>
+<tr>
+<td width='80%'>
+<h3>
+Found 83 entries.
+</h3>
+</td>
+<td><input type='button' value='Select / Deselect All' onclick="checkUncheckAll(this);" class='button'/></td>
+<td>
+<select name='FormatType'>
+	<option>FASTA</option>
+	<option>Alignment</option>
+</select>
+</td>
+<td>
+<input type='submit' value='Format' class='button '/>
+</td>
+</tr>
+</table>
+<br>
+
+
+<table id='datatable'>
+<tr>
+	<td></td>
+	<th><a href="index.php?table=structure&page=list&text=&textfield=All+fields&Class%5B%5D=ALL&Organism%5B%5D=ALL&Type%5B%5D=ALL&Assay%5B%5D=ALL&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Protein+name&fields%5B%5D=Class&fields%5B%5D=Type&fields%5B%5D=PDBcode&sort_by=ID">ID</a></th>
+	<th><a href="index.php?table=structure&page=list&text=&textfield=All+fields&Class%5B%5D=ALL&Organism%5B%5D=ALL&Type%5B%5D=ALL&Assay%5B%5D=ALL&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Protein+name&fields%5B%5D=Class&fields%5B%5D=Type&fields%5B%5D=PDBcode&sort_by=Name">Name</a></th>
+	<th><a href="index.php?table=structure&page=list&text=&textfield=All+fields&Class%5B%5D=ALL&Organism%5B%5D=ALL&Type%5B%5D=ALL&Assay%5B%5D=ALL&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Protein+name&fields%5B%5D=Class&fields%5B%5D=Type&fields%5B%5D=PDBcode&sort_by=Protein name">Protein name</a></th>
+	<th><a href="index.php?table=structure&page=list&text=&textfield=All+fields&Class%5B%5D=ALL&Organism%5B%5D=ALL&Type%5B%5D=ALL&Assay%5B%5D=ALL&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Protein+name&fields%5B%5D=Class&fields%5B%5D=Type&fields%5B%5D=PDBcode&sort_by=Class">Class</a></th>
+	<th><a href="index.php?table=structure&page=list&text=&textfield=All+fields&Class%5B%5D=ALL&Organism%5B%5D=ALL&Type%5B%5D=ALL&Assay%5B%5D=ALL&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Protein+name&fields%5B%5D=Class&fields%5B%5D=Type&fields%5B%5D=PDBcode&sort_by=Type">Type</a></th>
+	<th><a href="index.php?table=structure&page=list&text=&textfield=All+fields&Class%5B%5D=ALL&Organism%5B%5D=ALL&Type%5B%5D=ALL&Assay%5B%5D=ALL&fields%5B%5D=ID&fields%5B%5D=Name&fields%5B%5D=Protein+name&fields%5B%5D=Class&fields%5B%5D=Type&fields%5B%5D=PDBcode&sort_by=PDBcode">PDBcode</a></th>
+<tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="1" type="checkbox"></td>
+	<td class='num' nowrap>1</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=1'>High-resolution solution structure of kalata B1</a></td>
+	<td class='text' nowrap>kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1NB1</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="2" type="checkbox"></td>
+	<td class='num' nowrap>2</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=2'>High-resolution solution structure of cycloviolacin O1</a></td>
+	<td class='text' nowrap>cycloviolacin O1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1NBJ</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="3" type="checkbox"></td>
+	<td class='num' nowrap>3</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=3'>Solution structure of MCoTI-II, a macrocyclic trypsin inhibitor</a></td>
+	<td class='text' nowrap>MCoTI-II</td>
+	<td class='text' nowrap>Squash trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1IB9</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="4" type="checkbox"></td>
+	<td class='num' nowrap>4</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=4'>Solution structure of the Moebius cyclotide kalata B2</a></td>
+	<td class='text' nowrap>kalata B2</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1PT4</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="5" type="checkbox"></td>
+	<td class='num' nowrap>5</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=5'>Solution Structure of the Cylcotide Palicourein: Implications for the development of pharmaceutical and agricultural applications</a></td>
+	<td class='text' nowrap>palicourein</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1R1F</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="6" type="checkbox"></td>
+	<td class='num' nowrap>6</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=6'>solution structure of vhr1, the first cyclotide from root tissue</a></td>
+	<td class='text' nowrap>vhr1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1VB8</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="7" type="checkbox"></td>
+	<td class='num' nowrap>7</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=7'>Solution structure of the cyclotide tricyclon A</a></td>
+	<td class='text' nowrap>tricyclon A</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1YP8</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="8" type="checkbox"></td>
+	<td class='num' nowrap>8</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=8'>circulin A</a></td>
+	<td class='text' nowrap>circulin A</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1BH4</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="9" type="checkbox"></td>
+	<td class='num' nowrap>9</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=9'>Refined structure and disulfide pairing of the kalata B1 peptide</a></td>
+	<td class='text' nowrap>kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1K48</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="10" type="checkbox"></td>
+	<td class='num' nowrap>10</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=10'>kalata B1</a></td>
+	<td class='text' nowrap>kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1KAL</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="11" type="checkbox"></td>
+	<td class='num' nowrap>11</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=11'>NMR structure of [Ala1,15]kalata B1</a></td>
+	<td class='text' nowrap>[Ala1,15]kB1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1N1U</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="12" type="checkbox"></td>
+	<td class='num' nowrap>12</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=12'>Solution Structure of acyclic permutatnt des-(24-28)-kalata B1</a></td>
+	<td class='text' nowrap>des(24-28)kB1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1ORX</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="13" type="checkbox"></td>
+	<td class='num' nowrap>13</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=13'>SFTI-1</a></td>
+	<td class='text' nowrap>SFTI-1</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>1SFI</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="14" type="checkbox"></td>
+	<td class='num' nowrap>14</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=14'>SFTI-1</a></td>
+	<td class='text' nowrap>SFTI-1</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1JBL</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="15" type="checkbox"></td>
+	<td class='num' nowrap>15</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=15'>N-SFTI-1-C</a></td>
+	<td class='text' nowrap>N-SFTI-1-C</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1JBN</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="16" type="checkbox"></td>
+	<td class='num' nowrap>16</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=16'>SFTI-1(6,5)</a></td>
+	<td class='text' nowrap>SFTI-1(6,5)</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1O8Y</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="17" type="checkbox"></td>
+	<td class='num' nowrap>17</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=17'>SFTI-1(6,5)</a></td>
+	<td class='text' nowrap>SFTI-1(6,5)</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1O8Z</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="18" type="checkbox"></td>
+	<td class='num' nowrap>18</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=18'>Ent AS-48</a></td>
+	<td class='text' nowrap>Ent AS-48</td>
+	<td class='text' nowrap>Bacterial</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1E68</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="19" type="checkbox"></td>
+	<td class='num' nowrap>19</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=19'>Ent AS-48</a></td>
+	<td class='text' nowrap>Ent AS-48</td>
+	<td class='text' nowrap>Bacterial</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>1O82</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="20" type="checkbox"></td>
+	<td class='num' nowrap>20</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=20'>Ent AS-48</a></td>
+	<td class='text' nowrap>Ent AS-48</td>
+	<td class='text' nowrap>Bacterial</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>1O83</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="21" type="checkbox"></td>
+	<td class='num' nowrap>21</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=21'>Ent AS-48</a></td>
+	<td class='text' nowrap>Ent AS-48</td>
+	<td class='text' nowrap>Bacterial</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>1O84</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="22" type="checkbox"></td>
+	<td class='num' nowrap>22</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=22'>RTD-1</a></td>
+	<td class='text' nowrap>RTD-1</td>
+	<td class='text' nowrap>Primate</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1HVZ</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="23" type="checkbox"></td>
+	<td class='num' nowrap>23</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=23'>NMR solution structure of a leaf-specific-expressed cyclotide vhl-1</a></td>
+	<td class='text' nowrap>vhl-1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1ZA8</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="24" type="checkbox"></td>
+	<td class='num' nowrap>24</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=24'>NMR Structure of VoNTR</a></td>
+	<td class='text' nowrap>Vontr Protein</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1WN4</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="25" type="checkbox"></td>
+	<td class='num' nowrap>25</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=25'>NMR Structure of OaNTR</a></td>
+	<td class='text' nowrap>Oantr protein</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1WN8</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="26" type="checkbox"></td>
+	<td class='num' nowrap>26</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=26'>[ABA3,11]SFTI-1</a></td>
+	<td class='text' nowrap>[ABA3,11]SFTI-1</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1T9E</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="27" type="checkbox"></td>
+	<td class='num' nowrap>27</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=27'>SFTI-1</a></td>
+	<td class='text' nowrap>SFTI-1</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1GM2</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="28" type="checkbox"></td>
+	<td class='num' nowrap>28</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=28'>violacin A</a></td>
+	<td class='text' nowrap>violacin A</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2FQA</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="29" type="checkbox"></td>
+	<td class='num' nowrap>29</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=29'>Cycloviolacin O14</a></td>
+	<td class='text' nowrap>cycloviolacin O14</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2GJ0</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="30" type="checkbox"></td>
+	<td class='num' nowrap>30</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=30'>1H NMR solution structure of cycloviolacin O1</a></td>
+	<td class='text' nowrap>cycloviolacin O1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1DF6</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="31" type="checkbox"></td>
+	<td class='num' nowrap>31</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=31'>Solution structure of circulin B</a></td>
+	<td class='text' nowrap>circulin B</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2ERI</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="32" type="checkbox"></td>
+	<td class='num' nowrap>32</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=32'>Structure of cyclotide Kalata B1 in DPC micelles solution</a></td>
+	<td class='text' nowrap>kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1ZNU</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="33" type="checkbox"></td>
+	<td class='num' nowrap>33</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=33'>Refined structure and disulfide pairing of the kalata B1 peptide</a></td>
+	<td class='text' nowrap>kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1JJZ</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="34" type="checkbox"></td>
+	<td class='num' nowrap>34</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=34'>SOLUTION STRUCTURE OF A NOVEL C2 SYMMETRICAL BIFUNCTIONAL BICYCLIC INHIBITOR BASED ON SFTI-1</a></td>
+	<td class='text' nowrap>BiKK</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2BEY</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="35" type="checkbox"></td>
+	<td class='num' nowrap>35</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=35'>Discovery, structural determination and processing of the precursor protein that produces the cyclic trypsin inhibitor SFTI-1</a></td>
+	<td class='text' nowrap>SFTI precursor protein [partial+error]</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2AB9</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="36" type="checkbox"></td>
+	<td class='num' nowrap>36</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=36'>Structure of Subtilosin A</a></td>
+	<td class='text' nowrap>subtilosin A</td>
+	<td class='text' nowrap>Bacterial</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1PXQ</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="37" type="checkbox"></td>
+	<td class='num' nowrap>37</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=37'>Solution structure of kalata B8</a></td>
+	<td class='text' nowrap>kalata B8</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2B38</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="38" type="checkbox"></td>
+	<td class='num' nowrap>38</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=38'>Solution structure of [P20D,V21K]-kalata B1</a></td>
+	<td class='text' nowrap>[P20D,V21K]kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2F2I</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="39" type="checkbox"></td>
+	<td class='num' nowrap>39</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=39'>Solution structure of [W19K, P20N, V21K]-kalata B1</a></td>
+	<td class='text' nowrap>[W19K, P20N, V21K]kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2F2J</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="40" type="checkbox"></td>
+	<td class='num' nowrap>40</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=40'>Solution structure of [T27A]kalata B1</a></td>
+	<td class='text' nowrap>[T27A]kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap></td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="41" type="checkbox"></td>
+	<td class='num' nowrap>41</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=41'>Solution structure of [E7A]kalata B1</a></td>
+	<td class='text' nowrap>[E7A]kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap></td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="42" type="checkbox"></td>
+	<td class='num' nowrap>42</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=42'>NMR spatial srtucture of ternary complex kalata B7/Mn2+/DPC micelle</a></td>
+	<td class='text' nowrap>kalata B7</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2JWM</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="43" type="checkbox"></td>
+	<td class='num' nowrap>43</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=43'>Solution structure of micelle-bound kalata B2</a></td>
+	<td class='text' nowrap>kalata B2</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2KCH</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="44" type="checkbox"></td>
+	<td class='num' nowrap>44</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=44'>Solution structure of cycloviolacin O2.</a></td>
+	<td class='text' nowrap>cycloviolacin O2</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2KCG</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="45" type="checkbox"></td>
+	<td class='num' nowrap>45</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=45'>Alpha-amanitin inhibited complete RNA polymerase II elongation complex</a></td>
+	<td class='text' nowrap>alpha-amanitin</td>
+	<td class='text' nowrap>Mushroom</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>2VUM</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="46" type="checkbox"></td>
+	<td class='num' nowrap>46</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=46'>Crystal Structure of Yeast RNA Polymerase II Complexed with the Inhibitor Alpha Amanitin</a></td>
+	<td class='text' nowrap>alpha-amanitin</td>
+	<td class='text' nowrap>Mushroom</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>1K83</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="47" type="checkbox"></td>
+	<td class='num' nowrap>47</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=47'>Solution Structure of varv F</a></td>
+	<td class='text' nowrap>varv peptide F</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2K7G</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="48" type="checkbox"></td>
+	<td class='num' nowrap>48</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=48'>Crystal structure of the cyclotide varv F</a></td>
+	<td class='text' nowrap>varv peptide F</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>3E4H</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="49" type="checkbox"></td>
+	<td class='num' nowrap>49</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=49'>Solution structure of the cyclotide cycloviolacin O2 </a></td>
+	<td class='text' nowrap>cycloviolacin O2</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2KNM</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="50" type="checkbox"></td>
+	<td class='num' nowrap>50</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=50'>Solution structure of vhl-2</a></td>
+	<td class='text' nowrap>vhl-2</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2KUK</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="51" type="checkbox"></td>
+	<td class='num' nowrap>51</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=51'>Solution structure of the cyclotide kalata B5 from Oldenlandia affinis</a></td>
+	<td class='text' nowrap>kalata B5</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2KUX</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="52" type="checkbox"></td>
+	<td class='num' nowrap>52</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=52'>SOLUTION STRUCTURE OF THE SQUASH TRYPSIN INHIBITOR MCOTI-II, NMR, 30 STRUCTURES.</a></td>
+	<td class='text' nowrap>MCoTI-II</td>
+	<td class='text' nowrap>Squash trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>1HA9</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="53" type="checkbox"></td>
+	<td class='num' nowrap>53</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=53'>The structure of a two-disulfide intermediate of MCoTI-II</a></td>
+	<td class='text' nowrap>MCoTI-II IIa</td>
+	<td class='text' nowrap>Squash trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2PO8</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="54" type="checkbox"></td>
+	<td class='num' nowrap>54</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=54'>SFT-L1</a></td>
+	<td class='text' nowrap>SFT-L1</td>
+	<td class='text' nowrap>PawS-Derived Peptides</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>20085</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="55" type="checkbox"></td>
+	<td class='num' nowrap>55</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=55'>Structural and functional study of kalata B12, a naturally occurring Glu to Asp mutant</a></td>
+	<td class='text' nowrap>kalata B12</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2kvx</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="56" type="checkbox"></td>
+	<td class='num' nowrap>56</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=56'>Three-dimensional structure of the cyclotide Cter M</a></td>
+	<td class='text' nowrap>Cter M</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2LAM</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="57" type="checkbox"></td>
+	<td class='num' nowrap>57</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=57'>NMR solution structure of Kb1[ghfrwg;23-28]</a></td>
+	<td class='text' nowrap>kB1[GHFRWG;23-28]</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2LUR</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="58" type="checkbox"></td>
+	<td class='num' nowrap>58</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=58'>trypsin:MCoTi-II complex</a></td>
+	<td class='text' nowrap>MCoTI-II</td>
+	<td class='text' nowrap>Squash trypsin inhibitor</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>4GUX</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="62" type="checkbox"></td>
+	<td class='num' nowrap>62</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=62'>Solution structure of Hdm2 with engineered cyclotide</a></td>
+	<td class='text' nowrap>MCo-PMI</td>
+	<td class='text' nowrap>Squash trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2M86</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="63" type="checkbox"></td>
+	<td class='num' nowrap>63</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=63'>Solution structure of the all-D kalata B1</a></td>
+	<td class='text' nowrap>kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2JUE</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="64" type="checkbox"></td>
+	<td class='num' nowrap>64</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=64'>Crystal structure of bovine trypsin complexed with sfti-1 analog containing a peptoid residue at position p1</a></td>
+	<td class='text' nowrap>SFTI-1</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>4HGC</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="65" type="checkbox"></td>
+	<td class='num' nowrap>65</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=65'>Co-complex structure of bovine trypsin with a modified Bowman-Birk inhibitor (PtA)SFTI-1(1,14), that was 1,4-disubstituted with a 1,2,3- trizol to mimic a trans amide bond</a></td>
+	<td class='text' nowrap>SFTI-1(1,14) [P8,P9PtA]</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>4ABI</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="66" type="checkbox"></td>
+	<td class='num' nowrap>66</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=66'>Co-complex structure of bovine trypsin with a modified Bowman-Birk inhibitor (IcA)SFTI-1(1,14), that was 1,5-disubstituted with 1,2,3- trizol to mimic a cis amid bond</a></td>
+	<td class='text' nowrap>SFTI-1(1,14) [I7,P8IcA]</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>4ABJ</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="67" type="checkbox"></td>
+	<td class='num' nowrap>67</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=67'>Crystal Structure of MT-SP1 in complex with SFTI-1</a></td>
+	<td class='text' nowrap>SFTI-1</td>
+	<td class='text' nowrap>BBI-like trypsin inhibitor</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>3P8F</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="68" type="checkbox"></td>
+	<td class='num' nowrap>68</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=68'>The solution structure of the circular bacteriocin carnocyclin A (CclA)</a></td>
+	<td class='text' nowrap>Carnocyclin A</td>
+	<td class='text' nowrap>Bacterial</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2KJF</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="69" type="checkbox"></td>
+	<td class='num' nowrap>69</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=69'>Solution structure of kalata B7</a></td>
+	<td class='text' nowrap>kalata B7</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2M9O</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="70" type="checkbox"></td>
+	<td class='num' nowrap>70</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=70'>Solution NMR structure of cyclotide MCoTI-HA</a></td>
+	<td class='text' nowrap>MCoTI-HA</td>
+	<td class='text' nowrap>Squash trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>5WOW</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="71" type="checkbox"></td>
+	<td class='num' nowrap>71</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=71'>Kalata B7 Ser mutant</a></td>
+	<td class='text' nowrap>kalata B7[Y15S]</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2MW0</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="72" type="checkbox"></td>
+	<td class='num' nowrap>72</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=72'>Solution structure MTAbl13, a grafted MCoTI-II</a></td>
+	<td class='text' nowrap>MTAbl13</td>
+	<td class='text' nowrap>Squash trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2MT8</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="73" type="checkbox"></td>
+	<td class='num' nowrap>73</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=73'>Solution Structure of kalata B1[W23WW]</a></td>
+	<td class='text' nowrap>kalata B1[W23WW]</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>2MN1</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="74" type="checkbox"></td>
+	<td class='num' nowrap>74</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=74'>Racemic structure of kalata B1 (kB1)</a></td>
+	<td class='text' nowrap>kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>4TTM</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="75" type="checkbox"></td>
+	<td class='num' nowrap>75</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=75'>Quasi-racemic structure of [G6A]kalata B1</a></td>
+	<td class='text' nowrap>[G6A]kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>4TTN</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="76" type="checkbox"></td>
+	<td class='num' nowrap>76</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=76'>Quasi-racemic structure of [V25A] kalata B1</a></td>
+	<td class='text' nowrap>[V25A]kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>4TTO</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="77" type="checkbox"></td>
+	<td class='num' nowrap>77</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=77'>Enzymatic cyclisation of kalata B1 using sortase A</a></td>
+	<td class='text' nowrap>cyclo-[GGG]kB1[T]</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>2MH1</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="78" type="checkbox"></td>
+	<td class='num' nowrap>78</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=78'>NMR Solution Structure of Acyclotide ribe 31</a></td>
+	<td class='text' nowrap>ribe31</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>7KPD</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="79" type="checkbox"></td>
+	<td class='num' nowrap>79</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=79'>NMR Solution structure of Rivi3</a></td>
+	<td class='text' nowrap>Rivi3</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>6DHR</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="80" type="checkbox"></td>
+	<td class='num' nowrap>80</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=80'>Solution NMR structure of cyclotide MCoTI-I</a></td>
+	<td class='text' nowrap>MCoTI-I</td>
+	<td class='text' nowrap>Squash trypsin inhibitor</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>5WOV</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="81" type="checkbox"></td>
+	<td class='num' nowrap>81</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=81'>Solution structure of the cyclotide pase A</a></td>
+	<td class='text' nowrap>pase A</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>7K7X</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="84" type="checkbox"></td>
+	<td class='num' nowrap>84</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=84'>Crystal structure of cycloviolacin O2</a></td>
+	<td class='text' nowrap>cycloviolacin O2</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>7RMQ</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="89" type="checkbox"></td>
+	<td class='num' nowrap>89</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=89'>[I11G]hyen D</a></td>
+	<td class='text' nowrap>[I11G]hyen D</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>XRAY</td>
+	<td class='text' nowrap>7RIJ</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="90" type="checkbox"></td>
+	<td class='num' nowrap>90</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=90'>NMR Solution Structure of [T20K]kalata B1</a></td>
+	<td class='text' nowrap>[T20K]kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>7LHC</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="91" type="checkbox"></td>
+	<td class='num' nowrap>91</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=91'>NMR Solution structure of linear [T20K]kalataB1</a></td>
+	<td class='text' nowrap>[T20K]kalata B1</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>7RFA</td>
+</tr>
+<tr style='background-color:#FFFFFF'>
+	<td><input name="hits[]" value="92" type="checkbox"></td>
+	<td class='num' nowrap>92</td>
+	<td class='text' nowrap><a href='?page=card&table=structure&id=92'>hyen D solution structure</a></td>
+	<td class='text' nowrap>hyen D</td>
+	<td class='text' nowrap>Cyclotide</td>
+	<td class='text' nowrap>NMR</td>
+	<td class='text' nowrap>7RN3</td>
+</tr>
+
+</table>
+
+
+</form>
+
+	
+</div>
+<div id='foot'>
+<hr id='foothr'/>
+<p>
+CyBase is managed at the Institute of Molecular Bioscience <a href='http://imb.uq.edu.au/'>IMB</a>, Brisbane, Australia.
+</p>
+<p>The database and computational tools found on this website may be used for academic research only, provided that it is referred to CyBase, the database of cyclic proteins (http://www.cybase.org.au). For any other use please contact David Craik (d.craik@imb.uq.edu.au).
+</p>
+<p>
+<img src='images/IMB_UQ_small.png' style='float:right;margin-top: 30px;'/>
+Contacts:<br/>
+<a href="mailto:d.craik@imb.uq.edu.au?subject=CyBase">David Craik</a><br/>
+<a href="mailto:c.wang@imb.uq.edu.au?subject=CyBase">Conan Wang</a><br/>
+<a href="mailto:q.kaas@imb.uq.edu.au?subject=CyBase">Quentin Kaas</a><br/>
+</p>
+<p>
+Last updated: Monday 8 January 2024</p>
+</div>
+
+
+</div>
+
+
+
+
+</body>
+
+</html>
+
