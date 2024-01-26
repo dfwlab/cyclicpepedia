@@ -1,5 +1,8 @@
 # CyclicPepedia
 
+## Environment
+Build a Docker image through <code>dockerfile</code> or pull docker image through this link:<code>docker pull registry.cn-hangzhou.aliyuncs.com/dfwlab/cyclicpepedia:20240106</code>.
+
 ## Dataset
 The <code>/Dataset</code> directory stores the main data resources of the <a href="https://www.biosino.org/iMAC/cyclicpepedia/">CyclicPepedia</a>, and you can also download these data from the <a href="https://www.biosino.org/iMAC/cyclicpepedia/download">Downloads</a> of CyclicPepedia.
 
