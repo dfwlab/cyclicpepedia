@@ -1,6 +1,6 @@
 # CyclicPepedia: A knowledge base of natural and synthetic cyclic peptides
 
-Lei Liu<sub>1, #</sub>, Liu Yang2, #, Suqi Cao2, Zhigang Gao3, Bin Yang4, Guoqing Zhang5, *, Ruixin Zhu1, *, Dingfeng Wu2, *
+Lei Liu<sup>1, #</sup>, Liu Yang<sup>2, #</sup>, Suqi Cao<sup>2</sup>, Zhigang Gao<sup>3</sup>, Bin Yang<sup>4</sup>, Guoqing Zhang<sup>5, *</sup>, Ruixin Zhu<sup>1, *</sup>, Dingfeng Wu<sup>2, *</sup>
 
 
 ### Environment
