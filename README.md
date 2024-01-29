@@ -12,7 +12,7 @@ Build a Docker image through <code>dockerfile</code> or pull docker image throug
 The <code>/Dataset</code> directory stores the main data resources of the <a href="https://www.biosino.org/iMAC/cyclicpepedia/">CyclicPepedia</a>, and you can also download these data from the <a href="https://www.biosino.org/iMAC/cyclicpepedia/download">Downloads</a> of CyclicPepedia.
 
 ### Tools
-Codes in <code>/Tools</code> for the cyclic peptide tool used by CyclicPepedia and its test notebooks. You need to ensure that the program is valid in the same environment (build a Docker image through dockerfile and <code>pip install Jupyterlab</code>), or pull docker image through this link:<code>docker pull registry.cn-hangzhou.aliyuncs.com/dfwlab/cyclicpepedia:20240106</code>. 
+Codes in <code>/Tools</code> for the cyclic peptide tool used by CyclicPepedia and its test notebooks. You need to ensure that the program is valid in the same environment (build a Docker image through dockerfile and <code>pip install jupyterlab</code>), or pull docker image through this link:<code>docker pull registry.cn-hangzhou.aliyuncs.com/dfwlab/cyclicpepedia:20240106</code>. 
 
 * Struc2Seq (structure2sequence.py) and Test_Struc2seq.ipynb
 * Seq2Struc (sequence2structure.py) and Test_Seq2struc.ipynb
