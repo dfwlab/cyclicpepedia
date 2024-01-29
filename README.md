@@ -6,7 +6,7 @@ Lei Liu<sup>1, #</sup>, Liu Yang<sup>2, #</sup>, Suqi Cao<sup>2</sup>, Zhigang G
 The <code>/Web crawling</code> directory stores the crawler codes of different data source. 
 
 ### Environment
-Build a Docker image through <code>dockerfile</code> or pull docker image through this link:<code>docker pull registry.cn-hangzhou.aliyuncs.com/dfwlab/cyclicpepedia:20240106</code>. You can use this image with the following command like: <code>docker run -it -p 80:8000 -v $(PWD):/Cyclicpepedia $imageName:$tag /bin/bash</code>. And then install the Jupyterlab by <code>pip install jupyterlab</code> and lanch it by <code>jupyter lab --allow-root --ip=0.0.0.0 --port=8000</code>.
+Build a Docker image through <code>dockerfile</code> or pull docker image through this link:<code>docker pull registry.cn-hangzhou.aliyuncs.com/dfwlab/cyclicpepedia:20240106</code>. You can use this image with the following command like: <code>docker run -it -p 80:8888 -v $(PWD):/Cyclicpepedia $imageName:$tag /bin/bash</code>. And then install the Jupyterlab by <code>pip install jupyterlab</code> and lanch it by <code>jupyter lab --allow-root --ip=0.0.0.0 --port=8888</code>.
 
 ### Dataset
 The <code>/Dataset</code> directory stores the main data resources of the <a href="https://www.biosino.org/iMAC/cyclicpepedia/">CyclicPepedia</a>, and you can also download these data from the <a href="https://www.biosino.org/iMAC/cyclicpepedia/download">Downloads</a> of CyclicPepedia.
